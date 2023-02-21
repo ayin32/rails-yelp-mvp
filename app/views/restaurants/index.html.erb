@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<div id="restaurants" class="text-center">
+  <% @restaurants.each do |restaurant| %>
+    <%= render restaurant %>
+    <p>
+      <%= link_to "Show this restaurant", restaurant, class:"btn btn-link"%>
+    </p>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+<%= render @restaurant %>
+
+<div class="text-center">
+  <%= link_to "Back to restaurants", restaurants_path %>
+</div>
+
+<div class="mt-4 text-center">
+  <h2>Reviews</h2>
+  <ul style="display:inline-block;vertical-align:middle;">
+    <% @restaurant.reviews.each do |review| %>
+      <li><%= review.content %> - <%= review.rating%> stars </li>
+    <% end %>
+  </ul>
+
+  <br>
+  <%= link_to 'Create New Review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary'  %>
+</div>
